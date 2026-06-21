@@ -19,9 +19,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kishorhamal.com'),
-  title: 'Kishor Hamal — Marketing Analytics & Growth Specialist',
+  title: 'Kishor Hamal | Marketing Analytics & Growth Specialist',
   description:
-    'Data-driven marketer turning insights into business growth. Specializing in marketing analytics, performance marketing, tracking, and business intelligence.',
+    'Kishor Hamal helps businesses grow through marketing analytics, data analytics, business intelligence, performance marketing, automation, and AI-powered decision making.',
   keywords: [
     'Marketing Analytics',
     'Growth Specialist',
@@ -34,16 +34,16 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Kishor Hamal' }],
   openGraph: {
-    title: 'Kishor Hamal — Marketing Analytics & Growth Specialist',
+    title: 'Kishor Hamal | Marketing Analytics & Growth Specialist',
     description:
-      'Data-driven marketer turning insights into business growth.',
+      'Kishor Hamal helps businesses grow through marketing analytics, data analytics, business intelligence, performance marketing, automation, and AI-powered decision making.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kishor Hamal — Marketing Analytics & Growth Specialist',
+    title: 'Kishor Hamal | Marketing Analytics & Growth Specialist',
     description:
-      'Data-driven marketer turning insights into business growth.',
+      'Kishor Hamal helps businesses grow through marketing analytics, data analytics, business intelligence, performance marketing, automation, and AI-powered decision making.',
   },
 };
 
