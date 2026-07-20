@@ -52,30 +52,30 @@ export function WorkedWith() {
     <section
       ref={sectionRef}
       id="experience"
-      className="relative overflow-hidden bg-background px-6 py-28"
+      className="relative overflow-hidden bg-background px-6 py-32"
     >
-      {/* ambient glow */}
+      {/* ambient golden glow */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div className="h-[560px] w-[860px] rounded-full bg-accent/[0.05] blur-[150px]" />
+        <div className="h-[500px] w-[900px] rounded-full bg-accent/[0.04] blur-[160px]" />
       </div>
 
       <div
-        className={`mx-auto max-w-5xl transition-all duration-700 ease-out ${
+        className={`mx-auto max-w-6xl transition-all duration-700 ease-out ${
           visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
 
         {/* ── Eyebrow ── */}
-        <div className="mb-6 flex items-center justify-center gap-4">
-          <span className="h-px w-14 bg-accent/70" />
+        <div className="mb-8 flex items-center justify-center gap-4">
+          <span className="h-px w-12 bg-accent/60" />
           <p className="text-[11px] font-semibold tracking-[0.3em] text-accent uppercase">
             Trusted By
           </p>
-          <span className="h-px w-14 bg-accent/70" />
+          <span className="h-px w-12 bg-accent/60" />
         </div>
 
         {/* ── Heading ── */}
-        <h2 className="font-poppins mb-5 text-center text-5xl font-bold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
+        <h2 className="font-poppins mb-7 text-center text-5xl font-bold leading-[1.1] tracking-tight text-white md:text-6xl lg:text-7xl">
           Brands I've{' '}
           <span className="relative text-accent">
             Worked With
@@ -84,7 +84,7 @@ export function WorkedWith() {
         </h2>
 
         {/* ── Description ── */}
-        <p className="mx-auto mb-14 max-w-xl text-center text-[15px] leading-7 text-muted-foreground">
+        <p className="mx-auto mb-20 max-w-xl text-center text-[15px] leading-7 text-muted-foreground">
           I help brands grow through{' '}
           <span className="font-medium text-accent">digital marketing</span>,{' '}
           <span className="font-medium text-accent">performance marketing</span>,{' '}
@@ -92,18 +92,18 @@ export function WorkedWith() {
           and data-driven growth strategies.
         </p>
 
-        {/* ── Logo Track ── */}
-        <div className="relative rounded-2xl border border-white/[0.08] bg-[#0d0d0d] px-0 py-8 shadow-[0_2px_60px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.04)]">
-          {/* left fade */}
-          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-36 rounded-l-2xl bg-gradient-to-r from-[#0d0d0d] to-transparent" />
-          {/* right fade */}
-          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-36 rounded-r-2xl bg-gradient-to-l from-[#0d0d0d] to-transparent" />
+        {/* ── Logo Marquee ── */}
+        <div className="relative rounded-2xl border border-accent/10 bg-white/[0.015] py-14 backdrop-blur-sm [box-shadow:0_0_80px_-20px_rgba(180,140,60,0.18)]">
+          {/* left fade mask */}
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-40 rounded-l-2xl bg-gradient-to-r from-background via-background/80 to-transparent" />
+          {/* right fade mask */}
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-40 rounded-r-2xl bg-gradient-to-l from-background via-background/80 to-transparent" />
 
           <div className="overflow-hidden">
             <div
               className="flex w-max items-center"
               style={{
-                animation: 'marquee-scroll 35s linear infinite',
+                animation: 'marquee-scroll 38s linear infinite',
                 animationPlayState: paused ? 'paused' : 'running',
               }}
               onMouseEnter={() => setPaused(true)}
@@ -112,17 +112,20 @@ export function WorkedWith() {
               {track.map((logo, i) => (
                 <div
                   key={`${logo.name}-${i}`}
-                  className="group mx-7 flex shrink-0 cursor-pointer items-center justify-center"
+                  className="group flex shrink-0 items-center"
                 >
-                  <div className="flex h-[72px] w-[148px] items-center justify-center rounded-xl border border-white/[0.07] bg-white/[0.03] px-5 transition-all duration-300 group-hover:border-accent/30 group-hover:bg-white/[0.07] group-hover:shadow-[0_0_24px_rgba(180,140,60,0.14)]">
+                  {/* logo */}
+                  <div className="flex items-center justify-center px-10">
                     <img
                       src={logo.src}
                       alt={logo.name}
-                      className="max-h-10 max-w-[108px] object-contain transition-all duration-300 [filter:grayscale(70%)_opacity(0.75)] group-hover:[filter:grayscale(0%)_opacity(1)] group-hover:scale-[1.06]"
+                      className="h-10 w-auto select-none object-contain transition-all duration-300 [filter:grayscale(80%)_opacity(0.7)] group-hover:[filter:grayscale(0%)_opacity(1)] group-hover:scale-105"
                       loading="lazy"
                       draggable={false}
                     />
                   </div>
+                  {/* thin vertical divider */}
+                  <span className="h-9 w-px bg-white/[0.07]" />
                 </div>
               ))}
             </div>
@@ -130,13 +133,13 @@ export function WorkedWith() {
         </div>
 
         {/* ── Supporting line ── */}
-        <p className="mt-4 text-center text-xs leading-relaxed text-white/30">
+        <p className="mt-8 text-center text-xs leading-relaxed text-white/30">
           Supporting startups and established brands across SaaS, eCommerce, Finance, Healthcare, and Consumer Technology.
         </p>
 
         {/* ── Metric Cards ── */}
         <div
-          className={`mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4 transition-all duration-700 delay-300 ease-out ${
+          className={`mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4 transition-all duration-700 delay-300 ease-out ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
@@ -165,7 +168,7 @@ export function WorkedWith() {
 
         {/* ── Skill Pills ── */}
         <div
-          className={`mt-9 flex flex-wrap items-center justify-center gap-x-1 gap-y-3 transition-all duration-700 delay-500 ease-out ${
+          className={`mt-12 flex flex-wrap items-center justify-center gap-x-1 gap-y-3 transition-all duration-700 delay-500 ease-out ${
             visible ? 'opacity-100' : 'opacity-0'
           }`}
         >
