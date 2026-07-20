@@ -3,7 +3,7 @@ import { CoreFocus } from '@/components/CoreFocus';
 import { ToolsGrid } from '@/components/ToolsGrid';
 import { ProjectCard } from '@/components/ProjectCard';
 import { ImpactSnapshot } from '@/components/ImpactSnapshot';
-import { ExperienceTimeline } from '@/components/ExperienceTimeline';
+import { WorkedWith } from '@/components/WorkedWith';
 import { ContactSection } from '@/components/ContactSection';
 import { projects } from '@/data/projects';
 
@@ -32,7 +32,7 @@ export default function Home() {
       </section>
 
       <ImpactSnapshot />
-      <ExperienceTimeline />
+      <WorkedWith />
       <ContactSection />
     </>
   );
