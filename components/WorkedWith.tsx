@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Compass, Rocket, BarChart3, RefreshCw, TrendingUp, ArrowRight } from 'lucide-react';
+import { Compass, Rocket, ChartBar as BarChart3, RefreshCw, TrendingUp, ArrowRight } from 'lucide-react';
 
 const logos = [
+  { name: 'Rain Local',        src: '/logos/rainlocal_logo.jpeg' },
   { name: 'Calilio',           src: '/logos/CALILIO_LOGO.webp' },
   { name: 'CDR Report Writer', src: '/logos/CDR_REPORT_WRITER_LOGO.jpeg' },
   { name: 'Mobilemandu',       src: '/logos/MOBILEMANDU_LOGO.png' },
