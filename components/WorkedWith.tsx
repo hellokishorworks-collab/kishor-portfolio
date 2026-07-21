@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Calendar, Handshake, TrendingUp, Globe, Target, Megaphone, ChartPie as PieChart, Crosshair } from 'lucide-react';
+import { Compass, Rocket, BarChart3, RefreshCw, TrendingUp, ArrowRight } from 'lucide-react';
 
 const logos = [
   { name: 'Calilio',           src: '/logos/CALILIO_LOGO.webp' },
@@ -14,19 +14,12 @@ const logos = [
   { name: 'Yoddha Lab',        src: '/logos/YODDHA_LAB_LOGO.png' },
 ];
 
-const metrics = [
-  { icon: Calendar,   value: '4+',    label: 'Years Experience', sub: 'In Digital Marketing' },
-  { icon: Handshake,  value: '8+',    label: 'Brands',           sub: 'Worked With'          },
-  { icon: TrendingUp, value: '5+',    label: 'Industries',       sub: 'Served'               },
-  { icon: Globe,      value: 'Remote',label: 'Nepal • Global',   sub: 'Open to Opportunities'},
-];
-
-const skills = [
-  { icon: Target,     label: 'Performance Marketing' },
-  { icon: Megaphone,  label: 'Paid Ads'              },
-  { icon: PieChart,   label: 'Analytics'             },
-  { icon: Crosshair,  label: 'Tracking'              },
-  { icon: TrendingUp, label: 'Growth Strategy'       },
+const approach = [
+  { icon: Compass,    label: 'Strategy' },
+  { icon: Rocket,     label: 'Launch'   },
+  { icon: BarChart3,  label: 'Measure'  },
+  { icon: RefreshCw,  label: 'Optimize' },
+  { icon: TrendingUp,  label: 'Scale'   },
 ];
 
 // triple-duplicate so the loop is seamless even at wide viewports
@@ -88,12 +81,12 @@ export function WorkedWith() {
           I help brands grow through{' '}
           <span className="font-medium text-accent">digital marketing</span>,{' '}
           <span className="font-medium text-accent">performance marketing</span>,{' '}
-          paid advertising, marketing analytics, conversion tracking,{' '}
-          and data-driven growth strategies.
+          marketing analytics, business intelligence,{' '}
+          and data-driven decision making.
         </p>
 
         {/* ── Logo Marquee ── */}
-        <div className="relative rounded-2xl border border-accent/10 bg-white/[0.015] py-14 backdrop-blur-sm [box-shadow:0_0_80px_-20px_rgba(180,140,60,0.18)]">
+        <div className="relative rounded-2xl border border-accent/10 bg-white/[0.015] py-20 backdrop-blur-sm [box-shadow:0_0_80px_-20px_rgba(180,140,60,0.18)]">
           {/* left fade mask */}
           <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-40 rounded-l-2xl bg-gradient-to-r from-background via-background/80 to-transparent" />
           {/* right fade mask */}
@@ -114,18 +107,17 @@ export function WorkedWith() {
                   key={`${logo.name}-${i}`}
                   className="group flex shrink-0 items-center"
                 >
-                  {/* logo */}
-                  <div className="flex items-center justify-center px-10">
+                  <div className="flex items-center justify-center px-12">
                     <img
                       src={logo.src}
                       alt={logo.name}
-                      className="h-10 w-auto select-none object-contain transition-all duration-300 [filter:grayscale(80%)_opacity(0.7)] group-hover:[filter:grayscale(0%)_opacity(1)] group-hover:scale-105"
+                      className="h-20 w-auto select-none object-contain transition-transform duration-300 group-hover:scale-105"
                       loading="lazy"
                       draggable={false}
                     />
                   </div>
                   {/* thin vertical divider */}
-                  <span className="h-9 w-px bg-white/[0.07]" />
+                  <span className="h-14 w-px bg-white/[0.08]" />
                 </div>
               ))}
             </div>
@@ -137,50 +129,41 @@ export function WorkedWith() {
           Supporting startups and established brands across SaaS, eCommerce, Finance, Healthcare, and Consumer Technology.
         </p>
 
-        {/* ── Metric Cards ── */}
+        {/* ── My Approach ── */}
         <div
-          className={`mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4 transition-all duration-700 delay-300 ease-out ${
+          className={`mt-24 transition-all duration-700 delay-300 ease-out ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
-          {metrics.map(({ icon: Icon, value, label, sub }) => (
-            <div
-              key={label}
-              className="group relative flex flex-col items-center gap-4 overflow-hidden rounded-2xl border border-white/[0.07] bg-[#0d0d0d] px-4 py-8 text-center transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_36px_rgba(180,140,60,0.08)]"
-            >
-              {/* hover glow */}
-              <span className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-px w-2/3 bg-gradient-to-r from-transparent via-accent/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          <h3 className="font-poppins mb-10 text-center text-2xl font-semibold tracking-tight text-white md:text-3xl">
+            My Approach
+          </h3>
 
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-accent/25 bg-accent/10">
-                <Icon size={22} className="text-accent" strokeWidth={1.5} />
-              </div>
-
-              <div className="space-y-0.5">
-                <div className="font-poppins text-4xl font-bold tracking-tight text-white">
-                  {value}
+          {/* step flow */}
+          <div className="flex flex-wrap items-center justify-center gap-y-6">
+            {approach.map(({ icon: Icon, label }, idx) => (
+              <div key={label} className="flex items-center">
+                <div className="flex flex-col items-center gap-3 px-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-accent/20 bg-accent/[0.06]">
+                    <Icon size={20} className="text-accent" strokeWidth={1.6} />
+                  </div>
+                  <span className="text-sm font-medium text-white/80">{label}</span>
                 </div>
-                <div className="text-sm font-semibold text-white/80">{label}</div>
-                <div className="text-xs text-white/40">{sub}</div>
+                {idx < approach.length - 1 && (
+                  <ArrowRight
+                    size={18}
+                    className="mx-1 text-accent/40"
+                    strokeWidth={1.5}
+                  />
+                )}
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* ── Skill Pills ── */}
-        <div
-          className={`mt-12 flex flex-wrap items-center justify-center gap-x-1 gap-y-3 transition-all duration-700 delay-500 ease-out ${
-            visible ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          {skills.map(({ icon: Icon, label }, idx) => (
-            <div key={label} className="flex items-center gap-3">
-              {idx > 0 && <span className="text-white/15">•</span>}
-              <div className="flex items-center gap-2 text-[13px] text-white/40 transition-colors duration-200 hover:text-accent/90">
-                <Icon size={14} className="text-accent/60" strokeWidth={1.7} />
-                <span>{label}</span>
-              </div>
-            </div>
-          ))}
+          {/* subtitle */}
+          <p className="mx-auto mt-10 max-w-lg text-center text-sm leading-relaxed text-muted-foreground">
+            Helping businesses make smarter marketing decisions through analytics, experimentation, and continuous optimization.
+          </p>
         </div>
 
       </div>
