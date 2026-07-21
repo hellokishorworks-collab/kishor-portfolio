@@ -58,5 +58,27 @@
     [style*="marquee-scroll"] {
       animation: none !important;
     }
+    .whatsapp-pulse {
+      animation: none !important;
+    }
+  }
+
+  @keyframes whatsapp-pulse {
+    0% {
+      box-shadow: 0 6px 20px -4px rgba(37, 211, 102, 0.5),
+        0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    70% {
+      box-shadow: 0 6px 20px -4px rgba(37, 211, 102, 0.5),
+        0 0 0 18px rgba(37, 211, 102, 0);
+    }
+    100% {
+      box-shadow: 0 6px 20px -4px rgba(37, 211, 102, 0.5),
+        0 0 0 0 rgba(37, 211, 102, 0);
+    }
+  }
+
+  .whatsapp-pulse {
+    animation: whatsapp-pulse 9s ease-out infinite;
   }
 }
