@@ -22,9 +22,12 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://kishorhamal.com'),
   title: 'Kishor Hamal | Marketing Analytics & Growth Specialist',
   icons: {
-    icon: '/logos/rainlocal_logo.jpeg',
-    shortcut: '/logos/rainlocal_logo.jpeg',
-    apple: '/logos/rainlocal_logo.jpeg',
+    icon: [
+      { url: '/KishorhamalPp.png', type: 'image/png' },
+      { url: '/KishorhamalPp.png', sizes: 'any', type: 'image/png' },
+    ],
+    shortcut: [{ url: '/KishorhamalPp.png', type: 'image/png' }],
+    apple: [{ url: '/KishorhamalPp.png', type: 'image/png' }],
   },
   description:
     'Kishor Hamal helps businesses grow through marketing analytics, data analytics, business intelligence, performance marketing, automation, and AI-powered decision making.',
