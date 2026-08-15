@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Mail, MessageCircle, Linkedin } from 'lucide-react';
 import { CalButton } from '@/components/CalButton';
+import { ContactForm } from '@/components/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact — Kishor Hamal',
@@ -82,7 +83,12 @@ export default function ContactPage() {
           For remote roles, freelance projects, consulting, or collaboration.
         </p>
 
-        <div className="mt-16 rounded-lg border border-border/50 bg-card p-8">
+        {/* Contact Form */}
+        <div className="mt-16">
+          <ContactForm />
+        </div>
+
+        <div className="mt-8 rounded-lg border border-border/50 bg-card p-8">
           <h2 className="font-poppins mb-4 text-xl font-semibold text-foreground">
             Open to Opportunities
           </h2>
