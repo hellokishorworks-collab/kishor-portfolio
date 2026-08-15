@@ -120,7 +120,7 @@ export function ContactForm() {
         Send a Message
       </h3>
       <p className="mb-6 text-sm text-muted-foreground">
-        Fill out the form below and I&apos;ll get back to you as soon as possible.
+        Fill out the form and I&apos;ll get back to you.
       </p>
 
       <form onSubmit={handleSubmit} noValidate className="space-y-5">

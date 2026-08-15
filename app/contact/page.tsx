@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <section className="px-6 pt-32 pb-24">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-5xl">
+        {/* Header */}
         <p className="mb-2 text-sm font-medium tracking-widest text-accent uppercase">
           Get in Touch
         </p>
@@ -26,6 +27,7 @@ export default function ContactPage() {
           to connect — I&apos;d love to hear from you.
         </p>
 
+        {/* Contact methods */}
         <div className="grid gap-4 sm:grid-cols-3">
           <a
             href="mailto:hello.kishorworks@gmail.com"
@@ -34,9 +36,9 @@ export default function ContactPage() {
             <div className="flex h-10 w-10 items-center justify-center rounded-md bg-secondary">
               <Mail className="h-5 w-5 text-accent" />
             </div>
-            <div>
+            <div className="min-w-0">
               <p className="text-sm font-medium text-foreground">Email</p>
-              <p className="text-xs text-muted-foreground">
+              <p className="truncate text-xs text-muted-foreground">
                 hello.kishorworks@gmail.com
               </p>
             </div>
@@ -66,59 +68,41 @@ export default function ContactPage() {
             <div className="flex h-10 w-10 items-center justify-center rounded-md bg-secondary">
               <Linkedin className="h-5 w-5 text-accent" />
             </div>
-            <div>
+            <div className="min-w-0">
               <p className="text-sm font-medium text-foreground">LinkedIn</p>
-              <p className="text-xs text-muted-foreground">
+              <p className="truncate text-xs text-muted-foreground">
                 kishorhamal-32595935a
               </p>
             </div>
           </a>
         </div>
 
-        <div className="mt-10 flex justify-center">
+        {/* Primary CTA — single, centered */}
+        <div className="mt-8 flex justify-center">
           <CalButton />
         </div>
 
-        <p className="mt-3 text-center text-sm text-muted-foreground">
-          For remote roles, freelance projects, consulting, or collaboration.
-        </p>
-
-        {/* Contact Form */}
-        <div className="mt-16">
+        {/* Two-column layout: form + compact panel */}
+        <div className="mt-16 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
           <ContactForm />
-        </div>
 
-        <div className="mt-8 rounded-lg border border-border/50 bg-card p-8">
-          <h2 className="font-poppins mb-4 text-xl font-semibold text-foreground">
-            Open to Opportunities
-          </h2>
-
-          <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-            I&apos;m currently exploring international remote roles in:
-          </p>
-
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li className="flex items-center gap-2">
-              <span className="h-1 w-1 rounded-full bg-accent" />
-              Marketing Analytics & Data Intelligence
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="h-1 w-1 rounded-full bg-accent" />
-              Performance Marketing & Growth
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="h-1 w-1 rounded-full bg-accent" />
-              Tracking, Measurement & Attribution
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="h-1 w-1 rounded-full bg-accent" />
-              Business Intelligence & Reporting
-            </li>
-          </ul>
-
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            Target regions: USA, Australia, UK, Germany, Nepal
-          </p>
+          <div className="flex flex-col justify-center rounded-lg border border-border/50 bg-card p-6 md:p-8">
+            <h2 className="font-poppins mb-3 text-xl font-semibold text-foreground">
+              Let&apos;s work together
+            </h2>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              Open to remote roles, freelance projects, consulting, and
+              collaboration.
+            </p>
+            <div className="mt-6 border-t border-border/50 pt-5">
+              <p className="text-xs uppercase tracking-widest text-muted-foreground">
+                Target regions
+              </p>
+              <p className="mt-2 text-sm text-foreground">
+                USA · Australia · UK · Germany · Nepal
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
