@@ -37,10 +37,10 @@ export default function ContactPage() {
         <div>
           <div className="mb-8 max-w-xl">
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-accent">
-              Let&apos;s work together
+              Get in Touch
             </p>
             <h1 className="font-poppins text-4xl font-bold leading-[1.12] tracking-tight text-foreground sm:text-5xl">
-              Let&apos;s Create Impact Together
+              Contact
             </h1>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground">
               Whether you have a project in mind, a role to discuss, or just
