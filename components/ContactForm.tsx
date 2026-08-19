@@ -13,7 +13,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from './ui/select';
-import { supabase } from '@/lib/supabase';
 
 const INTEREST_OPTIONS = [
   'Remote Role',
@@ -91,16 +90,22 @@ export function ContactForm() {
     setSuccess(false);
 
     try {
-      const { error } = await supabase.from('contact_submissions').insert({
-        name: form.name.trim(),
-        email: form.email.trim(),
-        company: form.company.trim() || null,
-        interest: form.interest,
-        message: form.message.trim(),
-        budget: form.budget.trim() || null,
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          company: form.company.trim() || null,
+          interest: form.interest,
+          message: form.message.trim(),
+          budget: form.budget.trim() || null,
+        }),
       });
 
-      if (error) throw error;
+      if (!res.ok) {
+        throw new Error('Request failed');
+      }
 
       setSuccess(true);
       setForm(initialForm);
