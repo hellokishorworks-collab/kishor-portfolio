@@ -1,127 +1,99 @@
 'use client';
 
-import { Mail, MessageCircle, Linkedin } from 'lucide-react';
+import { Linkedin, Mail, MessageCircle } from 'lucide-react';
 import { CalButton } from './CalButton';
 import { ContactForm } from './ContactForm';
+
+const contactMethods = [
+  {
+    label: 'Email',
+    value: 'hello.kishorworks@gmail.com',
+    href: 'mailto:hello.kishorworks@gmail.com',
+    icon: Mail,
+  },
+  {
+    label: 'WhatsApp',
+    value: '+977 9713057146',
+    href: 'https://wa.me/9779713057146',
+    icon: MessageCircle,
+  },
+  {
+    label: 'LinkedIn',
+    value: 'kishorhamal-32595935a',
+    href: 'https://www.linkedin.com/in/kishorhamal-32595935a/',
+    icon: Linkedin,
+  },
+];
 
 export function ContactSection() {
   return (
     <section id="contact" className="px-6 py-24">
-      <div className="mx-auto max-w-6xl">
-
-        <p className="mb-2 text-sm font-medium tracking-widest text-accent uppercase">
-          Get in Touch
-        </p>
-
-        <h2 className="font-poppins mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-          Contact
-        </h2>
-
-        <p className="mb-10 max-w-lg text-muted-foreground">
-          Whether you have a project in mind, a role to discuss, or just want
-          to connect — I&apos;d love to hear from you.
-        </p>
-
-        <div className="grid gap-4 sm:grid-cols-3">
-          <a
-            href="mailto:hello.kishorworks@gmail.com"
-            className="group flex items-center gap-4 rounded-lg border border-border/50 bg-card p-5 transition-colors hover:border-accent/30"
-          >
-            <div className="flex h-10 w-10 items-center justify-center rounded-md bg-secondary">
-              <Mail className="h-5 w-5 text-accent" />
-            </div>
-            <div>
-              <p className="text-sm font-medium text-foreground">Email</p>
-              <p className="text-xs text-muted-foreground">
-                hello.kishorworks@gmail.com
-              </p>
-            </div>
-          </a>
-
-          <a
-            href="https://wa.me/9779713057146"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-4 rounded-lg border border-border/50 bg-card p-5 transition-colors hover:border-accent/30"
-          >
-            <div className="flex h-10 w-10 items-center justify-center rounded-md bg-secondary">
-              <MessageCircle className="h-5 w-5 text-accent" />
-            </div>
-            <div>
-              <p className="text-sm font-medium text-foreground">WhatsApp</p>
-              <p className="text-xs text-muted-foreground">+977 9713057146</p>
-            </div>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/kishorhamal-32595935a/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-4 rounded-lg border border-border/50 bg-card p-5 transition-colors hover:border-accent/30"
-          >
-            <div className="flex h-10 w-10 items-center justify-center rounded-md bg-secondary">
-              <Linkedin className="h-5 w-5 text-accent" />
-            </div>
-            <div>
-              <p className="text-sm font-medium text-foreground">LinkedIn</p>
-              <p className="text-xs text-muted-foreground">
-                kishorhamal-32595935a
-              </p>
-            </div>
-          </a>
-        </div>
-
-        <div className="mt-10 flex justify-center">
-          <CalButton />
-        </div>
-
-        <div className="mt-16 grid gap-8 lg:grid-cols-2">
-          {/* Contact Form */}
-          <ContactForm />
-
-          {/* Open to Opportunities */}
-          <div className="flex flex-col justify-start">
-            <div className="rounded-lg border border-border/50 bg-card p-6 md:p-8">
-              <h3 className="font-poppins mb-2 text-xl font-semibold text-foreground">
-                Open to Opportunities
-              </h3>
-              <p className="mb-5 text-sm text-muted-foreground">
-                I&apos;m currently exploring international remote roles in:
-              </p>
-              <ul className="space-y-3">
-                {[
-                  'Marketing Analytics & Data Intelligence',
-                  'Performance Marketing & Growth',
-                  'Tracking, Measurement & Attribution',
-                  'Business Intelligence & Reporting',
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-sm text-foreground">
-                    <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-6 border-t border-border/50 pt-5">
-                <p className="text-xs uppercase tracking-widest text-muted-foreground">
-                  Target regions
-                </p>
-                <p className="mt-2 text-sm text-foreground">
-                  USA, Australia, UK, Germany, Nepal
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-4 rounded-lg border border-border/50 bg-card p-6 md:p-8">
-              <p className="text-sm text-muted-foreground">
-                For remote roles, freelance projects, consulting, or collaboration.
-              </p>
-              <div className="mt-4">
-                <CalButton />
-              </div>
-            </div>
+      <div className="mx-auto grid w-full max-w-6xl items-start gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:gap-16 xl:gap-24">
+        <div>
+          <div className="mb-8 max-w-xl">
+            <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-accent">
+              Get in Touch
+            </p>
+            <h2 className="font-poppins text-4xl font-bold leading-[1.12] tracking-tight text-foreground sm:text-5xl">
+              Contact
+            </h2>
+            <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground">
+              Whether you have a project in mind, a role to discuss, or just
+              want to connect — I&apos;d love to hear from you.
+            </p>
           </div>
+
+          <ContactForm />
         </div>
 
+        <aside className="pt-2 lg:pt-16">
+          <div className="mb-9 flex items-center gap-3">
+            <span className="h-px w-8 bg-accent" aria-hidden="true" />
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">
+              I&apos;m here to help
+            </p>
+          </div>
+
+          <h3 className="font-poppins max-w-lg text-3xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-4xl">
+            Let&apos;s Build Something Great
+          </h3>
+          <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground">
+            I help businesses and teams grow through data-driven marketing,
+            analytics, and performance strategies. Let&apos;s turn your ideas
+            into measurable results.
+          </p>
+
+          <div className="mt-10 space-y-3">
+            {contactMethods.map(({ label, value, href, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith('http') ? '_blank' : undefined}
+                rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className="group flex items-center gap-4 rounded-xl border border-transparent p-3 transition-colors hover:border-border/60 hover:bg-card"
+              >
+                <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-secondary text-accent transition-colors group-hover:bg-accent group-hover:text-background">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-base font-semibold text-foreground">
+                    {label}
+                  </span>
+                  <span className="mt-1 block truncate text-sm text-muted-foreground">
+                    {value}
+                  </span>
+                </span>
+              </a>
+            ))}
+          </div>
+
+          <div className="mt-8 border-t border-border/50 pt-8">
+            <p className="mb-4 text-sm font-semibold text-foreground">
+              Ready to talk?
+            </p>
+            <CalButton />
+          </div>
+        </aside>
       </div>
     </section>
   );
