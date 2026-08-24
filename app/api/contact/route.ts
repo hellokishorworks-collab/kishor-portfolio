@@ -4,8 +4,9 @@ import nodemailer from 'nodemailer';
 
 export const runtime = 'nodejs';
 
-const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const SUPABASE_URL = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_SERVICE_ROLE_KEY =
+  process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const GMAIL_USER = process.env.GMAIL_USER;
 const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
 
@@ -210,16 +211,14 @@ export async function POST(req: Request) {
     console.warn(notificationError);
   }
 
-  const { error: updateError } = await supabase
-    .from('contact_submissions')
-    .update({
-      notification_email_sent: notificationSent,
-      thank_you_email_sent: thankYouSent,
-      notification_email_error: notificationError,
-      thank_you_email_error: thankYouError,
-      email_sent_at: emailSentAt,
-    })
-    .eq('id', submissionId);
+  const { error: updateError } = await supabase.rpc('update_contact_email_tracking', {
+    p_id: submissionId,
+    p_notification_sent: notificationSent,
+    p_thank_you_sent: thankYouSent,
+    p_notification_error: notificationError,
+    p_thank_you_error: thankYouError,
+    p_email_sent_at: emailSentAt,
+  });
 
   if (updateError) {
     console.error('Failed to update email tracking:', updateError.message);
