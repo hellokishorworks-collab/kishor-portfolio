@@ -31,7 +31,7 @@ export default async function BlogPage() {
           {blogs.map((blog) => (
             <article
               key={blog.slug}
-              className="group rounded-xl border border-border/50 bg-card p-6 transition-colors hover:border-accent/40"
+              className="group rounded-xl border border-border/50 bg-card p-6 transition-colors hover:border-border/80"
             >
               <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
                 {blog.publishedAt && (

@@ -19,7 +19,7 @@ export function ExperienceTimeline() {
               <div key={exp.id} className="relative pl-8 md:pl-12">
                 <div className="absolute left-0 top-1.5 h-2.5 w-2.5 rounded-full border-2 border-accent bg-background md:left-3" />
 
-                <div className="rounded-lg border border-border/50 bg-card p-5 transition-colors hover:border-accent/30">
+                <div className="rounded-lg border border-border/50 bg-card p-5 transition-colors hover:border-border/80">
                   <div className="mb-1 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                     <h3 className="font-poppins text-base font-semibold text-foreground">
                       {exp.role}

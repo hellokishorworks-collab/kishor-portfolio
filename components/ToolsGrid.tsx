@@ -15,7 +15,7 @@ export function ToolsGrid() {
           {tools.map((tool) => (
             <span
               key={tool.id}
-              className="inline-flex items-center rounded-md border border-border/50 bg-secondary px-4 py-2 text-sm text-secondary-foreground transition-colors hover:border-accent/30 hover:text-foreground"
+              className="inline-flex items-center rounded-md border border-border/50 bg-secondary px-4 py-2 text-sm text-secondary-foreground transition-colors hover:border-border/80 hover:text-foreground"
             >
               {tool.name}
             </span>

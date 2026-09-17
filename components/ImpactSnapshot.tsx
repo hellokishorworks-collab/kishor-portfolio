@@ -103,7 +103,7 @@ export function ImpactSnapshot() {
                 transitionDelay: `${index * 100}ms`,
               }}
             >
-              <div className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-8 backdrop-blur-sm transition-all duration-300 hover:border-accent/30 hover:bg-card">
+              <div className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-8 backdrop-blur-sm transition-all duration-300 hover:border-border/80 hover:bg-card">
                 <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-secondary/20 transition-transform duration-500 group-hover:scale-110" />
 
                 <div className="relative z-10">

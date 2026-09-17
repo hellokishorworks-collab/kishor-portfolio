@@ -5,7 +5,7 @@ import { Project } from '@/types';
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <Link href={`/projects/${project.slug}`} className="group block">
-      <div className="rounded-lg border border-border/50 bg-card p-6 transition-colors hover:border-accent/30">
+      <div className="rounded-lg border border-border/50 bg-card p-6 transition-colors hover:border-border/80">
         <div className="mb-4 aspect-video overflow-hidden rounded-md bg-secondary/50">
           <img
             src={project.image}

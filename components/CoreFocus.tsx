@@ -25,7 +25,7 @@ export function CoreFocus() {
             return (
               <div
                 key={service.id}
-                className="group rounded-lg border border-border/50 bg-card p-6 transition-colors hover:border-accent/30"
+                className="group rounded-lg border border-border/50 bg-card p-6 transition-colors hover:border-border/80"
               >
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-secondary">
                   {Icon && (

@@ -230,7 +230,7 @@ export default function AdminDashboardPage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               <Link
                 href="/admin/projects/new"
-                className="flex items-center gap-2.5 rounded-lg border border-border/60 bg-secondary/30 p-3 text-xs font-semibold text-foreground hover:border-accent/40 hover:bg-secondary/70 transition-all"
+                className="flex items-center gap-2.5 rounded-lg border border-border/60 bg-secondary/30 p-3 text-xs font-semibold text-foreground hover:border-border/80 hover:bg-secondary/70 transition-all"
               >
                 <div className="flex h-7 w-7 items-center justify-center rounded-md bg-accent/20 text-accent">
                   <Plus className="h-4 w-4" />
@@ -240,7 +240,7 @@ export default function AdminDashboardPage() {
 
               <Link
                 href="/admin/blog/new"
-                className="flex items-center gap-2.5 rounded-lg border border-border/60 bg-secondary/30 p-3 text-xs font-semibold text-foreground hover:border-accent/40 hover:bg-secondary/70 transition-all"
+                className="flex items-center gap-2.5 rounded-lg border border-border/60 bg-secondary/30 p-3 text-xs font-semibold text-foreground hover:border-border/80 hover:bg-secondary/70 transition-all"
               >
                 <div className="flex h-7 w-7 items-center justify-center rounded-md bg-accent/20 text-accent">
                   <Plus className="h-4 w-4" />
@@ -250,7 +250,7 @@ export default function AdminDashboardPage() {
 
               <Link
                 href="/admin/media"
-                className="flex items-center gap-2.5 rounded-lg border border-border/60 bg-secondary/30 p-3 text-xs font-semibold text-foreground hover:border-accent/40 hover:bg-secondary/70 transition-all"
+                className="flex items-center gap-2.5 rounded-lg border border-border/60 bg-secondary/30 p-3 text-xs font-semibold text-foreground hover:border-border/80 hover:bg-secondary/70 transition-all"
               >
                 <div className="flex h-7 w-7 items-center justify-center rounded-md bg-accent/20 text-accent">
                   <Upload className="h-4 w-4" />
@@ -260,7 +260,7 @@ export default function AdminDashboardPage() {
 
               <Link
                 href="/admin/inquiries"
-                className="flex items-center gap-2.5 rounded-lg border border-border/60 bg-secondary/30 p-3 text-xs font-semibold text-foreground hover:border-accent/40 hover:bg-secondary/70 transition-all"
+                className="flex items-center gap-2.5 rounded-lg border border-border/60 bg-secondary/30 p-3 text-xs font-semibold text-foreground hover:border-border/80 hover:bg-secondary/70 transition-all"
               >
                 <div className="flex h-7 w-7 items-center justify-center rounded-md bg-accent/20 text-accent">
                   <Mail className="h-4 w-4" />
@@ -270,7 +270,7 @@ export default function AdminDashboardPage() {
 
               <Link
                 href="/admin/about"
-                className="flex items-center gap-2.5 rounded-lg border border-border/60 bg-secondary/30 p-3 text-xs font-semibold text-foreground hover:border-accent/40 hover:bg-secondary/70 transition-all"
+                className="flex items-center gap-2.5 rounded-lg border border-border/60 bg-secondary/30 p-3 text-xs font-semibold text-foreground hover:border-border/80 hover:bg-secondary/70 transition-all"
               >
                 <div className="flex h-7 w-7 items-center justify-center rounded-md bg-accent/20 text-accent">
                   <User className="h-4 w-4" />
@@ -280,7 +280,7 @@ export default function AdminDashboardPage() {
 
               <Link
                 href="/admin/settings"
-                className="flex items-center gap-2.5 rounded-lg border border-border/60 bg-secondary/30 p-3 text-xs font-semibold text-foreground hover:border-accent/40 hover:bg-secondary/70 transition-all"
+                className="flex items-center gap-2.5 rounded-lg border border-border/60 bg-secondary/30 p-3 text-xs font-semibold text-foreground hover:border-border/80 hover:bg-secondary/70 transition-all"
               >
                 <div className="flex h-7 w-7 items-center justify-center rounded-md bg-accent/20 text-accent">
                   <Settings className="h-4 w-4" />
@@ -313,7 +313,7 @@ export default function AdminDashboardPage() {
                   <Link
                     key={item.id}
                     href={item.href}
-                    className="flex items-center justify-between rounded-lg border border-border/40 bg-secondary/20 p-3.5 hover:border-accent/40 hover:bg-secondary/40 transition-all"
+                    className="flex items-center justify-between rounded-lg border border-border/40 bg-secondary/20 p-3.5 hover:border-border/80 hover:bg-secondary/40 transition-all"
                   >
                     <div className="flex items-center gap-3">
                       <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-card text-accent border border-border/60 shrink-0">
