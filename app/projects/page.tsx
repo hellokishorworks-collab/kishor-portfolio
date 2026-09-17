@@ -1,14 +1,18 @@
 import type { Metadata } from 'next';
 import { ProjectCard } from '@/components/ProjectCard';
-import { projects } from '@/data/projects';
+import { getPublishedProjects } from '@/lib/data';
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: 'Projects — Kishor Hamal',
   description:
-    'Selected projects in marketing analytics, performance marketing, tracking, and data visualization.',
+    'Selected projects in marketing analytics, performance marketing, tracking, and data visualization by Kishor Hamal.',
 };
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const projects = await getPublishedProjects();
+
   return (
     <section className="px-6 pt-32 pb-24">
       <div className="mx-auto max-w-6xl">

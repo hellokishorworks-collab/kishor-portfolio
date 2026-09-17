@@ -1,27 +1,35 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
-import { projects } from '@/data/projects';
+import { getProjectBySlug, getPublishedProjects } from '@/lib/data';
 
-export function generateStaticParams() {
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const projects = await getPublishedProjects();
   return projects.map((project) => ({ slug: project.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const project = await getProjectBySlug(params.slug);
   if (!project) return { title: 'Project Not Found' };
   return {
     title: `${project.title} — Kishor Hamal`,
     description: project.summary,
+    openGraph: {
+      title: `${project.title} — Kishor Hamal`,
+      description: project.summary,
+      images: [project.image],
+    },
   };
 }
 
-export default function ProjectDetailPage({
+export default async function ProjectDetailPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  const project = projects.find((p) => p.slug === params.slug);
+  const project = await getProjectBySlug(params.slug);
 
   if (!project) {
     notFound();

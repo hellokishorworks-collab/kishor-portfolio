@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import { experiences } from '@/data/experience';
-import { tools } from '@/data/tools';
+import { getAboutContent } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'About — Kishor Hamal',
@@ -8,7 +7,9 @@ export const metadata: Metadata = {
     'Marketing Analytics & Growth Specialist with 4+ years of experience in data-driven marketing, performance marketing, and business intelligence.',
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const aboutData = await getAboutContent();
+
   return (
     <section className="px-6 pt-32 pb-24">
       <div className="mx-auto max-w-3xl">
@@ -20,31 +21,15 @@ export default function AboutPage() {
         </h1>
 
         <div className="space-y-5 text-muted-foreground leading-relaxed">
-          <p>
-            I&apos;m a Marketing Analytics & Growth Specialist working at the
-            intersection of data, marketing, and business intelligence. My
-            focus is on turning complex data into clear, actionable decisions
-            that drive business growth.
-          </p>
-          <p>
-            With 4+ years of experience managing paid media campaigns,
-            implementing tracking infrastructure, and building analytics
-            dashboards, I help organizations make smarter, data-informed
-            decisions. I&apos;ve worked across e-commerce, SaaS, and agency
-            environments, supporting markets in the USA, UK, Australia, and
-            Nepal.
-          </p>
-          <p>
-            I&apos;m particularly interested in how marketing data, user
-            behavior signals, and business intelligence tools can work together
-            to create a complete picture of performance — from first click to
-            conversion.
-          </p>
-          <p>
-            I&apos;m currently exploring opportunities for international remote
-            roles and preparing for master&apos;s programs in MSBA / data
-            analytics to deepen my technical expertise.
-          </p>
+          {aboutData.profile_intro && (
+            <p className="text-foreground font-medium text-lg leading-relaxed">
+              {aboutData.profile_intro}
+            </p>
+          )}
+
+          {aboutData.bio_paragraphs.map((para, idx) => (
+            <p key={idx}>{para}</p>
+          ))}
         </div>
 
         <div className="mt-16">
@@ -52,7 +37,7 @@ export default function AboutPage() {
             Experience
           </h2>
           <div className="space-y-6">
-            {experiences.map((exp) => (
+            {aboutData.experiences.map((exp) => (
               <div
                 key={exp.id}
                 className="rounded-lg border border-border/50 bg-card p-5 transition-colors hover:border-accent/30"
@@ -81,7 +66,7 @@ export default function AboutPage() {
             Tools & Stack
           </h2>
           <div className="flex flex-wrap gap-3">
-            {tools.map((tool) => (
+            {aboutData.tools.map((tool) => (
               <span
                 key={tool.id}
                 className="inline-flex items-center rounded-md border border-border/50 bg-secondary px-4 py-2 text-sm text-secondary-foreground transition-colors hover:border-accent/30 hover:text-foreground"

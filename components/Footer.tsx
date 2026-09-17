@@ -1,13 +1,11 @@
 import Link from 'next/link';
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="border-t border-border/50 px-6 py-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
         <p className="text-sm text-muted-foreground">
-          &copy; {currentYear} Kishor Hamal. All rights reserved.
+          &copy; 2026 Raj Kishor Hamal (Kishor Hamal). All rights reserved.
         </p>
         <div className="flex gap-6">
           <Link
@@ -15,6 +13,12 @@ export function Footer() {
             className="text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             Projects
+          </Link>
+          <Link
+            href="/blog"
+            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Blog
           </Link>
           <Link
             href="/about"
@@ -33,3 +37,4 @@ export function Footer() {
     </footer>
   );
 }
+
